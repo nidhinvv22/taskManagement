@@ -1,0 +1,62 @@
+<div class="container">
+
+<button class="btn btn-info" routerLink="/create">Create New Task</button>
+<ng-container *ngIf="taskList.length > 0; else noTasks">
+  <table class="table">
+    <thead class="table-dark">
+      <tr>
+        <th colspan="4" style="align-items: center">Task List</th>
+      </tr>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Due Date</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of taskList; index as i">
+        <th scope="row">{{ task.title }}</th>
+        <td>{{ task.dueDate }}</td>
+        <td>
+          <div class="icon-container">
+            <img
+              [src]="
+                task.isComplete
+                  ? '../../../assets/images/checkbox-checked.svg'
+                  : '../../../assets/images/checkbox-unchecked.svg'
+              "
+              alt="checkbox"
+              (click)="updateState(i)"
+              [title]="task.isComplete ? 'Mark as Incomplete' : 'Mark as Complete'"
+            />
+            <img
+              src="../../../assets/images/info.svg"
+              alt="View Details"
+              [routerLink]="['/details', i]"
+              title="View Details"
+            />
+            <img
+              src="../../../assets/images/edit.svg"
+              alt="Edit Task"
+              [routerLink]="['/edit', i]"
+              title="Edit Task"
+            />
+            <img
+              src="../../../assets/images/trash.svg"
+              alt="Delete Task"
+              (click)="deleteTask(i)"
+              title="Delete Task"
+            />
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</ng-container>
+<ng-template #noTasks>
+  <div class="no-tasks-message">
+    You don't have any tasks created. Please click on the above button to add a
+    task.
+  </div>
+</ng-template>
+<div class="container">

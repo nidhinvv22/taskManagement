@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0; /* Set a background color for better visibility */
+  }
+  
+  .container {
+    border: 2px solid #3498db; /* Blue border color */
+    padding: 20px; /* Adjust padding as needed */
+    width: 80%; /* Responsive width */
+    max-width: 400px; /* Maximum width */
+    background-color: #fff; /* Container background color */
+  }
+  
+  /* Add your existing styles for form elements, errors, etc. */
+  

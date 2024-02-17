@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="task-details">
+      <h2>Task Details</h2>
+      <div class="detail-item">
+        <label>Title:</label>
+        <p>{{ task.title }}</p>
+      </div>
+      <div class="detail-item">
+        <label>Description:</label>
+        <p>{{ task.description }}</p>
+      </div>
+      <div class="detail-item">
+        <label>Due Date:</label>
+        <p>{{ task.dueDate | date }}</p>
+      </div>
+      <div class="detail-item">
+        <label>Status:</label>
+        <p>{{ task.isComplete ? 'Complete' : 'Incomplete' }}</p>
+      </div>
+      <button routerLink=''>
+        Back to List Page
+    </button>
+    </div>
+
+  </div>
+  

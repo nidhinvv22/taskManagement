@@ -1,0 +1,28 @@
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+  
+    button {
+      margin: 10px 10px;
+    }
+  
+    .no-tasks-message {
+      border: 2px solid #3498db; 
+      padding: 15px;
+      text-align: center;
+      width: 80%; 
+      max-width: 400px; 
+      margin: 0 auto;
+    }
+  
+    .icon-container{
+        display: flex;
+        align-items: center;
+    }
+    .icon-container img{
+        margin-right: 0.5rem;
+    }
+  }
